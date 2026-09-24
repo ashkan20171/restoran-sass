@@ -1,56 +1,9 @@
-$color-dark: #262626;
-$color-black: #000;
-$color-primary: #d3ab55;
-$color-secondary: #bbb;
-$color-white : #fff;
 
-$font-dancingScript: "Dancing Script", cursive;
-$font-josefinSans: "Josefin Sans", sans-serif;
-$font-nunito: "Nunito", sans-serif;
-$font-sahel: Sahel, Tahoma;
-$font-nastaliq: Nastaliq, Tahoma;
-
-@font-face {
-  font-family: Sahel;
-  src: url("../fonts/Sahel.eot");
-  src: url("../fonts/Sahel.ttf") format("ttf"), url("../fonts/Sahel.woff") format("woff");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: Nastaliq;
-  src: url("../fonts/IranNastaliq.ttf");
-  font-weight: normal;
-}
-
-@mixin flexLayout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin textStyles {
-  font-weight: 300;
-  letter-spacing: 2px;
-}
-
-@mixin centering($topValue) {
-  position: absolute;
-  top: $topValue;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-%fullSpace {
-  width: 100%;
-  height: 100%;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background-color: $color-dark;
-}
+$bg:#0b0b0d;$surface:#141417;$gold:#d6ad5b;$gold2:#f0cc7a;$cream:#f7f1e5;$muted:#aaa7a0;
+$max:1200px;
+@mixin container{width:min($max,calc(100% - 40px));margin-inline:auto}
+@mixin card{background:$surface;border:1px solid #29292e;border-radius:22px}
+@mixin button{min-height:46px;padding:0 22px;border-radius:12px;background:$gold;color:#15120b;font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sahel,Arial,sans-serif;background:$bg;color:$cream;line-height:1.8;direction:rtl}
+a{color:inherit;text-decoration:none}

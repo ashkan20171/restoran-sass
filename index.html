@@ -1,217 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>
-        Sass Project
-    </title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Josefin+Sans:300,400,600,700|Nunito:300,400,600,700"
-        rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- start navbar section -->
-    <nav class="navbar">
-        <input type="checkbox" id="check" class="checkbox" hidden>
-        <div class="hamburger-menu">
-            <label for="check" class="menu">
-                <div class="menu-line menu-line-1"></div>
-                <div class="menu-line menu-line-2"></div>
-                <div class="menu-line menu-line-3"></div>
-            </label>
-        </div>
-        <div class="navbar-navigation">
-            <div class="navbar-navigation-left">
-                <img src="images/nav-img-1.jpeg" class="left-img left-img-1">
-                <img src="images/nav-img-2.jpeg" class="left-img left-img-2">
-                <img src="images/nav-img-3.jpeg" class="left-img left-img-3">
-            </div>
-            <div class="navbar-navigation-right">
-                <ul class="nav-list">
-                    <li class="nav-list-item">
-                        <a href="#" class="nav-list-link">خانه</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="#" class="nav-list-link">درباره ما</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="#" class="nav-list-link">گالری تصایر</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="#" class="nav-list-link">رزرو میز</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="#" class="nav-list-link">سرویس ها</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="#" class="nav-list-link">تماس با ما</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </nav>
-    <!-- end navbar section -->
-
-    <!-- start site header -->
-    <header class="header">
-        <div class="brand">
-            <a href="#" class="logo">
-                <i class="fa fa-utensils"></i>
-            </a>
-            <div>
-                <h1 class="main-name">رستوران من</h1>
-                <p class="sub-name">غذاهای لذیذ ما</p>
-            </div>
-        </div>
-        <div class="header-banner">
-            <h1 class="main-heading">خوش آمدید</h1>
-            <h3 class="sub-heading">غذاهای ما را امتحان کنید</h3>
-            <button type="button" class="main-btn">رزرو میز</button>
-        </div>
-    </header>
-    <!-- end site header -->
-
-    <!-- start about us section -->
-    <section class="about-us">
-        <div class="about-us-left">
-            <img src="images/about-us-img.png" alt="درباره ما">
-        </div>
-        <div class="about-us-right">
-            <h1 class="main-heading">درباره ی رستوران</h1>
-            <h3 class="sub-heading">درباره دستپخت اشکان مطاعی</h3>
-            <div class="stars">
-                <i class="fa fa-star-of-life star"></i>
-                <i class="fa fa-star-of-life star"></i>
-                <i class="fa fa-star-of-life star"></i>
-            </div>
-            <p class="description">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
-                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده
-                شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-                الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای
-                اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-            <div class="stars">
-                <i class="fa fa-star-of-life star"></i>
-                <i class="fa fa-star-of-life star"></i>
-                <i class="fa fa-star-of-life star"></i>
-            </div>
-            <button type="button" class="main-btn">اطلاعات بیشتر</button>
-        </div>
-    </section>
-    <!-- end about us section -->
-
-    <!-- start gallery section -->
-    <section class="gallery">
-        <div class="cards-wrapper">
-
-
-            <div class="card">
-                <div class="card-overlay">
-                    <h1 class="card-overlay-heading">نام غذا</h1>
-                    <p class="card-overlay-paragraph">قیمت : 50000 تومان</p>
-                    <button type="button" class="card-overlay-btn">سفارش</button>
-                </div>
-                <img src="images/gallery-img-1.jpeg" class="card-img">
-            </div>
-
-
-            <div class="card">
-                <div class="card-overlay">
-                    <h1 class="card-overlay-heading">نام غذا</h1>
-                    <p class="card-overlay-paragraph">قیمت :10000 تومان</p>
-                    <button type="button" class="card-overlay-btn">سفارش</button>
-                </div>
-                <img src="images/gallery-img-2.jpeg" class="card-img">
-            </div>
-            <div class="card">
-                <div class="card-overlay">
-                    <h1 class="card-overlay-heading">نام غذا</h1>
-                    <p class="card-overlay-paragraph">قیمت :40000 تومان</p>
-                    <button type="button" class="card-overlay-btn">سفارش</button>
-                </div>
-                <img src="images/gallery-img-3.jpeg" class="card-img">
-            </div>
-            <div class="card">
-                <div class="card-overlay">
-                    <h1 class="card-overlay-heading">نام غذا</h1>
-                    <p class="card-overlay-paragraph">قیمت :60000 تومان</p>
-                    <button type="button" class="card-overlay-btn">سفارش</button>
-                </div>
-                <img src="images/gallery-img-4.jpeg" class="card-img">
-            </div>
-            <div class="card">
-                <div class="card-overlay">
-                    <h1 class="card-overlay-heading">نام غذا</h1>
-                    <p class="card-overlay-paragraph">قیمت :30000 تومان</p>
-                    <button type="button" class="card-overlay-btn">سفارش</button>
-                </div>
-                <img src="images/gallery-img-5.jpeg" class="card-img">
-            </div>
-            <div class="card">
-                <div class="card-overlay">
-                    <h1 class="card-overlay-heading">نام غذا</h1>
-                    <p class="card-overlay-paragraph">قیمت :70000 تومان</p>
-                    <button type="button" class="card-overlay-btn">سفارش</button>
-                </div>
-                <img src="images/gallery-img-6.jpeg" class="card-img">
-            </div>
-        </div>
-    </section>
-    <!-- end gallery section -->
-
-    <!-- start footer section -->
-    <footer class="footer">
-        <div class="footer-header">
-            <a href="#" class="logo">
-                <i class="fa fa-utensils"></i>
-            </a>
-            <div>
-                <h1 class="main-name">رستوران من</h1>
-                <p class="sub-name">غذاهای لذیذ ما</p>
-            </div>
-        </div>
-        <div class="footer-social-media">
-            <ul class="social-media">
-                <li class="social-media-item">
-                    <a href="#" class="social-media-link">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                </li>
-                <li class="social-media-item">
-                    <a href="#" class="social-media-link">
-                        <i class="fab fa-google-plus-square"></i>
-                    </a>
-                </li>
-                <li class="social-media-item">
-                    <a href="#" class="social-media-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="social-media-item">
-                    <a href="#" class="social-media-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-copyright">
-            <p class="footer-copyright-paragraph">
-                تمامی حقوق این سایت متعلق به اشکان مطاعی می باشد
-            </p>
-        </div>
-    </footer>
-    <!-- end footer section -->
-</body>
-
-</html>
+<!doctype html><html lang="fa" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>رستوران اشکان | طعم، هنر و مهمان‌نوازی</title><meta name="description" content="رستوران اشکان؛ تجربه‌ای مدرن از غذاهای ایرانی و بین‌المللی، رزرو میز، منو و خدمات پذیرایی."><meta name="theme-color" content="#0b0b0d">
+<meta property="og:site_name" content="رستوران اشکان"><meta property="og:type" content="website"><meta property="og:title" content="رستوران اشکان | طعم، هنر و مهمان‌نوازی"><meta property="og:description" content="رستوران اشکان؛ تجربه‌ای مدرن از غذاهای ایرانی و بین‌المللی، رزرو میز، منو و خدمات پذیرایی."><link rel="manifest" href="site.webmanifest"><meta name="robots" content="index,follow"><link rel="canonical" href="https://example.com/index.html">
+<link rel="stylesheet" href="css/main.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "رستوران اشکان", "description": "رستوران با منوی ایرانی و بین‌المللی، رزرو میز و خدمات پذیرایی.", "servesCuisine": ["ایرانی", "بین‌المللی"], "priceRange": "$$", "telephone": "+982112345678", "address": {"@type": "PostalAddress", "addressLocality": "تهران", "streetAddress": "خیابان ولیعصر"}, "openingHours": ["Sa-Th 12:00-23:30", "Fr 12:00-24:00"]}</script>
+</head><body>
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+<div class="topbar"><div class="container"><span>امروز با طعم یک تجربه تازه منتظر شما هستیم</span><span class="hide-sm">رزرو تلفنی: <a href="tel:+982112345678">۰۲۱-۱۲۳۴۵۶۷۸</a></span></div></div>
+<header class="site-header"><nav class="nav container" aria-label="ناوبری اصلی">
+<a class="brand" href="index.html" aria-label="رستوران اشکان - صفحه اصلی"><span class="brand-mark">✦</span><span class="brand-text"><strong>اشکان</strong><span>Restaurant & Culinary House</span></span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">خانه</a></li><li><a href="menu.html">منو</a></li><li><a href="about.html">درباره ما</a></li><li><a href="gallery.html">گالری</a></li><li><a href="services.html">خدمات</a></li><li><a href="contact.html">تماس</a></li>
+</ul>
+<div class="nav-actions"><a class="icon-btn" href="menu.html" aria-label="سبد سفارش">🛒<span id="cartCount" style="font-size:10px">0</span></a><button class="btn" data-open-reservation>رزرو میز</button><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="باز کردن منو">☰</button></div>
+</nav></header>
+<main id="main">
+<section class="hero"><div class="container hero-content reveal"><span class="eyebrow">✦ تجربه‌ای فراتر از یک وعده غذایی</span><h1>اشکان</h1><h2>طعم، هنر و مهمان‌نوازی در یک میز</h2><p>غذاهایی با الهام از آشپزی ایرانی و جهان، با مواد اولیه منتخب و ارائه‌ای مدرن؛ برای شبی که قرار است به یاد بماند.</p><div class="hero-actions"><a class="btn" href="menu.html">مشاهده منو</a><button class="btn outline" data-open-reservation>رزرو میز</button></div><div class="hero-stats"><div class="hero-stat"><strong>+۱۲</strong><span>سال تجربه</span></div><div class="hero-stat"><strong>۴.۹/۵</strong><span>رضایت مهمانان</span></div><div class="hero-stat"><strong>+۴۰</strong><span>آیتم منو</span></div></div></div></section>
+<section class="section" id="featured"><div class="container"><div class="section-head reveal"><div><div class="section-title"><small>انتخاب سرآشپز</small>محبوب‌ترین‌های منو</div></div><p class="section-lead">چند انتخاب ویژه برای شروع تجربه شما؛ از پیش‌غذاهای اشتهابرانگیز تا غذاهای اصلی و دسرهای دست‌ساز.</p></div>
+<div class="grid menu-grid">
+<article class="food-card reveal" data-category="main" data-name="استیک گریل"><div class="food-img"><img src="images/img1.jpeg" alt="استیک گریل رستوران اشکان" loading="lazy"><span class="badge">پیشنهاد ویژه</span></div><div class="food-body"><div class="food-row"><h3 class="food-name">استیک گریل</h3><span class="food-price">۴۸۵٬۰۰۰ تومان</span></div><p class="food-desc">استیک آبدار با سبزیجات گریل و سس اختصاصی سرآشپز.</p><div class="food-actions"><a class="mini-btn" href="menu.html">جزئیات</a><button class="mini-btn primary" data-add="استیک گریل" data-price="485000">افزودن</button></div></div></article>
+<article class="food-card reveal" data-category="pizza" data-name="پیتزا مخصوص"><div class="food-img"><img src="images/img4.jpeg" alt="پیتزا مخصوص" loading="lazy"><span class="badge">محبوب</span></div><div class="food-body"><div class="food-row"><h3 class="food-name">پیتزا مخصوص</h3><span class="food-price">۲۹۵٬۰۰۰ تومان</span></div><p class="food-desc">خمیر دست‌ساز، پنیر کشدار، گوشت و سبزیجات تازه.</p><div class="food-actions"><a class="mini-btn" href="menu.html">جزئیات</a><button class="mini-btn primary" data-add="پیتزا مخصوص" data-price="295000">افزودن</button></div></div></article>
+<article class="food-card reveal" data-category="dessert" data-name="دسر شکلاتی"><div class="food-img"><img src="images/img10.jpeg" alt="دسر شکلاتی" loading="lazy"><span class="badge">جدید</span></div><div class="food-body"><div class="food-row"><h3 class="food-name">دسر شکلاتی</h3><span class="food-price">۱۵۵٬۰۰۰ تومان</span></div><p class="food-desc">بافت شکلاتی لطیف با میوه فصل و کرم وانیل.</p><div class="food-actions"><a class="mini-btn" href="menu.html">جزئیات</a><button class="mini-btn primary" data-add="دسر شکلاتی" data-price="155000">افزودن</button></div></div></article>
+</div></div></section>
+<section class="section about"><div class="container about-grid"><div class="about-image reveal"><img src="images/about-us-img.png" alt="فضای رستوران اشکان" loading="lazy"><div class="floating"><strong>مواد اولیه منتخب</strong><div style="font-size:11px;color:#aaa">تازه، روزانه و با دقت انتخاب می‌شوند.</div></div></div><div class="about-copy reveal"><div class="section-title"><small>داستان ما</small>جایی برای مزه کردن لحظه‌ها</div><p>اشکان با یک ایده ساده شکل گرفت: غذای خوب فقط طعم نیست؛ بخشی از آن فضا، توجه و احساسی است که هنگام نشستن پشت میز تجربه می‌کنید.</p><p>منوی ما ترکیبی از طعم‌های آشنا و اجرای معاصر است تا هم برای یک شام دوستانه و هم برای یک قرار ویژه، انتخابی مناسب داشته باشید.</p><div class="feature-list"><div class="feature"><strong>🍃 مواد اولیه تازه</strong><span>انتخاب روزانه و کنترل کیفیت</span></div><div class="feature"><strong>👨‍🍳 آشپزی خلاق</strong><span>دستورهای اختصاصی سرآشپز</span></div><div class="feature"><strong>🪑 فضای دلنشین</strong><span>مناسب قرار و دورهمی</span></div><div class="feature"><strong>⚡ سرویس سریع</strong><span>هماهنگ با سفارش و رزرو</span></div></div><a class="btn outline" href="about.html">داستان کامل ما</a></div></div></section>
+<section class="promo"><div class="container"><div class="promo-box reveal"><div><div class="section-title">شب دو نفره، با یک طعم ماندگار</div><p>برای مناسبت‌های ویژه، میز خود را از قبل رزرو کنید.</p></div><button class="btn" data-open-reservation>رزرو میز</button></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div class="section-title"><small>فضای ما</small>لحظه‌ها را ببینید</div><a class="btn outline" href="gallery.html">مشاهده گالری</a></div><div class="grid gallery-grid"><a class="gallery-item" href="gallery.html"><img src="images/gallery-img-1.jpeg" alt="غذای رستوران" loading="lazy"></a><a class="gallery-item" href="gallery.html"><img src="images/gallery-img-2.jpeg" alt="غذای رستوران" loading="lazy"></a><a class="gallery-item" href="gallery.html"><img src="images/gallery-img-3.jpeg" alt="فضای رستوران" loading="lazy"></a><a class="gallery-item" href="gallery.html"><img src="images/gallery-img-4.jpeg" alt="غذای ویژه" loading="lazy"></a><a class="gallery-item" href="gallery.html"><img src="images/gallery-img-5.jpeg" alt="دسر" loading="lazy"></a><a class="gallery-item" href="gallery.html"><img src="images/gallery-img-6.jpeg" alt="سرو غذا" loading="lazy"></a></div></div></section>
+<section class="section testimonials"><div class="container"><div class="section-head"><div class="section-title"><small>صدای مهمانان</small>تجربه‌هایی که به ما انگیزه می‌دهند</div></div><div class="grid testimonial-grid"><article class="quote reveal"><div class="stars">★★★★★</div><p>فضای خیلی شیک و غذاها با کیفیت بودند. ارائه غذاها هم واقعاً حرفه‌ای بود.</p><div class="person"><div class="avatar">م</div><span>مریم — مهمان</span></div></article><article class="quote reveal"><div class="stars">★★★★★</div><p>برای یک شام دوستانه انتخاب خوبی بود؛ منوی متنوع و سرویس منظم داشت.</p><div class="person"><div class="avatar">ع</div><span>علی — مهمان</span></div></article><article class="quote reveal"><div class="stars">★★★★★</div><p>دسر شکلاتی و استیک را امتحان کردم و تجربه جذابی بود. حتماً دوباره می‌آیم.</p><div class="person"><div class="avatar">س</div><span>سارا — مهمان</span></div></article></div></div></section>
+<section class="section cta"><div class="container"><div class="section-title">آماده‌اید میزتان را انتخاب کنید؟</div><p>یک میز آرام، غذای خوب و چند ساعت دور از شلوغی روزمره.</p><button class="btn" data-open-reservation>رزرو میز</button></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid">
+<div><a class="brand" href="index.html"><span class="brand-mark">✦</span><span class="brand-text"><strong>اشکان</strong><span>Restaurant & Culinary House</span></span></a><p style="margin-top:15px">ترکیبی از آشپزی خلاق، مواد اولیه باکیفیت و فضایی برای ساختن خاطره‌های خوش.</p></div>
+<div><h3>دسترسی سریع</h3><ul><li><a href="menu.html">منوی غذا</a></li><li><a href="reservation.html">رزرو میز</a></li><li><a href="gallery.html">گالری</a></li><li><a href="services.html">خدمات</a></li></ul></div>
+<div><h3>ارتباط با ما</h3><ul><li><a href="tel:+982112345678">۰۲۱-۱۲۳۴۵۶۷۸</a></li><li><a href="mailto:hello@ashkan-restaurant.example">hello@ashkan-restaurant.example</a></li><li>تهران، خیابان ولیعصر</li></ul></div>
+<div><h3>ساعات کاری</h3><ul><li>شنبه تا پنجشنبه: ۱۲ تا ۲۳:۳۰</li><li>جمعه: ۱۲ تا ۲۴</li><li><a href="contact.html">مسیر و اطلاعات بیشتر ←</a></li></ul></div>
+</div><div class="footer-bottom"><span>© <span class="year"></span> تمامی حقوق محفوظ است.</span><span>طراحی و توسعه با تمرکز بر تجربه کاربری، سرعت و SEO</span></div></div></footer>
+<button class="chat-launch" id="chatLaunch" aria-label="باز کردن دستیار هوشمند">✦</button>
+<section class="chat-window" id="chatWindow" aria-label="دستیار هوشمند"><div class="chat-head"><div><strong>دستیار اشکان</strong><small>پاسخ‌گوی منو و رزرو</small></div><button class="chat-close" id="chatClose" aria-label="بستن">×</button></div><div class="chat-messages" id="chatMessages"><div class="bubble bot">سلام! 👋 درباره منو، رزرو، ساعات کاری یا پیشنهاد غذا هر سؤالی دارید بپرسید.</div></div><div class="chat-quick"><button class="quick">رزرو میز</button><button class="quick">پیشنهاد غذا</button><button class="quick">ساعات کاری</button><button class="quick">آدرس</button></div><form class="chat-form" id="chatForm"><input id="chatInput" aria-label="پیام" placeholder="مثلاً برای دو نفر چه غذایی پیشنهاد می‌دهی؟"><button aria-label="ارسال">➤</button></form></section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal" id="reservationModal" role="dialog" aria-modal="true" aria-labelledby="reservationTitle"><div class="modal-card"><div class="modal-head"><div><h2 id="reservationTitle">رزرو میز</h2><p style="color:#999;font-size:12px">درخواست خود را ثبت کنید.</p></div><button class="close" data-close aria-label="بستن">×</button></div><form class="form-grid" id="reservationForm"><div class="field"><label>نام و نام خانوادگی</label><input name="name" required placeholder="نام شما"></div><div class="field"><label>شماره تماس</label><input name="phone" required type="tel" placeholder="۰۹۱۲..."></div><div class="field"><label>تاریخ</label><input name="date" required type="date"></div><div class="field"><label>ساعت</label><input name="time" required type="time"></div><div class="field"><label>تعداد نفرات</label><select name="people"><option>۲ نفر</option><option>۳ نفر</option><option>۴ نفر</option><option>۵ نفر</option><option>۶ نفر</option><option>بیش از ۶ نفر</option></select></div><div class="field"><label>مناسبت</label><select name="occasion"><option>عادی</option><option>تولد</option><option>سالگرد</option><option>جلسه کاری</option></select></div><div class="field full"><label>توضیحات</label><textarea name="note" placeholder="درخواست خاص، حساسیت غذایی و..."></textarea></div><div class="field full"><button class="btn" type="submit">ثبت درخواست رزرو</button></div></form></div></div>
+<script src="js/app.js" defer></script></body></html>
