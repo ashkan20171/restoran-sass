@@ -59,7 +59,7 @@
   let cart=JSON.parse(localStorage.getItem("restaurant-cart")||"[]");
   const cartCount=()=>{const el=$("#cartCount");if(el)el.textContent=cart.length};
   $$("[data-add]").forEach(btn=>btn.addEventListener("click",()=>{
-    cart.push({name:btn.dataset.add,price:btn.dataset.price});
+    cart.push({name:btn.dataset.add,price:window.AshkanPricing.normalize(btn.dataset.price)});
     localStorage.setItem("restaurant-cart",JSON.stringify(cart));cartCount();
     toast(`«${btn.dataset.add}» به سفارش شما اضافه شد.`);
   }));

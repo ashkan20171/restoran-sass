@@ -1,46 +1,37 @@
-# Restaurant Ashkan — Frontend Redesign
+# Ashkan Restaurant — Premium Bilingual Restaurant Website
 
-نسخه بازطراحی‌شده و توسعه‌یافته پروژه قدیمی رستوران با HTML + SCSS + JavaScript خالص.
+A multi-page restaurant experience built with **HTML, Sass/CSS and vanilla JavaScript**. The new English-first presentation has a dark culinary palette, responsive navigation, bilingual routes, a menu with filtering and a demo basket, a reservation request modal, and a local rule-based dining assistant.
 
-## امکانات
-- طراحی کاملاً RTL و فارسی، Responsive و Mobile-first
-- UI مدرن با پالت تیره/طلایی، hierarchy واضح و کنتراست مناسب
-- صفحه خانه، منو، درباره ما، گالری، خدمات، رزرو و تماس
-- منوی غذا با فیلتر دسته‌بندی و جست‌وجو
-- سبد سفارش فرانت‌اند با localStorage
-- رزرو میز با فرم و modal
-- چت‌بات هوشمند فرانت‌اند مبتنی بر intent؛ آماده اتصال به API مدل زبانی
-- انیمیشن‌های سبک و احترام به prefers-reduced-motion
-- SEO پایه حرفه‌ای: title/description/canonical/robots، Open Graph، Schema.org Restaurant، sitemap و robots
-- تصاویر با alt و loading=lazy
-- فونت‌های محلی؛ بدون وابستگی به CDN برای فونت و آیکون
-- دسترسی‌پذیری بهتر: skip-link، aria-label، focus states و semantic HTML
-- کدنویسی ماژولار در SCSS و JavaScript با توابع کوچک
-- بدون PHP و بدون framework
+## Start
 
-## اجرای پروژه
-فایل `index.html` را در مرورگر باز کنید یا با یک static server اجرا کنید.
+Run `python -m http.server 8000` from the project root and open `http://localhost:8000`.
 
-## چت‌بات واقعی
-چت‌بات فعلی بدون بک‌اند اجرا می‌شود و برای نسخه واقعی باید تابع `reply()` در `js/app.js` به API امن سمت سرور متصل شود. کلید API را داخل JavaScript مرورگر قرار ندهید.
+## Pages
 
-## شخصی‌سازی قبل از انتشار
-1. دامنه واقعی را جایگزین `https://example.com` در canonical، sitemap و Schema کنید.
-2. آدرس و شماره تلفن نمونه را با اطلاعات واقعی رستوران عوض کنید.
-3. قیمت‌ها، نام غذاها و ساعات کاری را با داده واقعی جایگزین کنید.
-4. برای SEO محلی، Google Business Profile و اطلاعات واقعی NAP را هماهنگ کنید.
-5. اگر سفارش آنلاین واقعی نیاز است، backend/payment و validation سمت سرور اضافه شود.
+- English (default): `/index.html`, `/menu.html`, `/about.html`, `/gallery.html`, `/services.html`, `/contact.html`, `/reservation.html`.
+- Persian (RTL): `/fa/index.html` and the matching seven pages. Use **FA / فارسی** or **EN** to switch languages.
 
-## ساختار
-- `index.html`
-- `menu.html`
-- `about.html`
-- `gallery.html`
-- `services.html`
-- `reservation.html`
-- `contact.html`
-- `css/main.css`
-- `scss/`
-- `js/app.js`
-- `images/`
-- `fonts/`
+## Architecture
+
+- `scss/` contains the original Sass sources.
+- `css/main.css` contains the original compiled styling.
+- `css/premium.css` contains the new English-first premium theme (editable CSS).
+- `js/app.js` is the original Persian page interaction layer.
+- `js/premium.js` is the English interaction layer, including demo basket and a **rule-based** FAQ assistant.
+- `images/` contains the original project photography.
+
+## Important demo limitations
+
+This is a **static frontend demo**. Reservation and contact forms do not transmit information or create real bookings. The basket is stored only in the browser, and there is no payment checkout. The assistant is a transparent local FAQ/rule-based chatbot, **not a connected AI model**. To add genuine AI, implement a server-side API with secure credentials, moderation, and data-handling controls. Never put API keys in client-side JavaScript.
+
+Prices, addresses, opening hours, reviews, and contact details inherited from the original project are illustrative and require verification before production. Update sample metadata and replace `example.com` URLs before launch. Do not publish unverified testimonials or promotions.
+
+## Next steps for production
+
+Connect reservations to a booking backend, add real inventory and checkout, verify restaurant information, create localized content from a single translation catalog, implement automated accessibility tests and integrate an authenticated AI service.
+
+## Stage 2
+Every route loads `js/experience.js` and `css/experience.css` for accessible navigation and clear demo disclosure. The English reservation form validates local dates and basic phone format. These checks are client-side only; a real booking service must validate again on the server.
+
+## Stage 3 — localized menu prices
+English pages show sample USD prices; Persian pages show toman prices. Both use the same underlying sample toman amounts. `js/pricing.js` defines an **illustrative** rate of 100,000 toman per USD, **not a live exchange rate**. Set independently approved USD menu prices or integrate a trusted pricing backend before production. The English cart total uses USD; the Persian menu displays toman.
