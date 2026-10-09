@@ -51,7 +51,7 @@
   $("#reservationForm")?.addEventListener("submit",e=>{
     e.preventDefault(); const fd=new FormData(e.target);
     const name=fd.get("name"), date=fd.get("date"), time=fd.get("time");
-    toast(`درخواست رزرو برای ${name} در تاریخ ${date} ساعت ${time} ثبت شد.`);
+    toast(`درخواست نمایشی ${name} برای ${date} ساعت ${time} فقط در مرورگر ثبت شد و تأیید نشده است.`);
     e.target.reset(); closeModal();
   });
 
