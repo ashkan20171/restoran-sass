@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text.Json;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -13,7 +14,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddRateLimiter(o => { o.RejectionStatusCode = 429; o.AddPolicy("public", c => RateLimitPartition.GetFixedWindowLimiter(c.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions { PermitLimit = 15, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 })); });
 builder.Services.AddHttpClient("ai", c => { c.BaseAddress = new Uri("https://api.openai.com/"); c.Timeout = TimeSpan.FromSeconds(20); });
 var app = builder.Build();
-app.UseHttpsRedirection(); app.UseRateLimiter(); app.UseAuthentication(); app.UseAuthorization();
+app.UseHttpsRedirection(); app.UseDefaultFiles(); app.UseStaticFiles(); app.UseRateLimiter(); app.UseAuthentication(); app.UseAuthorization();
 // Identity endpoints are intentionally NOT mapped publicly. Admin users are provisioned via the CLI tool below.
 app.MapPost("/api/admin/login", async (SignInManager<IdentityUser> signin, LoginInput input) => {
   if (string.IsNullOrWhiteSpace(input.Email) || string.IsNullOrWhiteSpace(input.Password)) return Results.BadRequest();
@@ -27,9 +28,7 @@ app.MapPost("/api/reservations", async (RestaurantDb db, ReservationInput input)
   db.Reservations.Add(r); await db.SaveChangesAsync(); return Results.Created($"/api/reservations/{r.Id}", new { r.Id, r.Status, message="Request received, not confirmed" });
 }).RequireRateLimiting("public");
 app.MapGet("/api/admin/reservations", async (RestaurantDb db) => await db.Reservations.AsNoTracking().OrderByDescending(r => r.Id).Take(200).ToListAsync()).RequireAuthorization();
-app.MapPatch("/api/admin/reservations/{id:int}", async (int id, StatusInput input, RestaurantDb db) => { if (input.Status is not ("Pending" or "Confirmed" or "Rejected")) return Results.BadRequest(); var r=await db.Reservations.FindAsync(id); if(r is null)return Results.NotFound();r.Status=input.Status;await db.SaveChangesAsync();return Results.Ok(new {r.Id,r.Status}); }).RequireAuthorization();
 app.MapGet("/api/menu", async (RestaurantDb db) => await db.MenuItems.AsNoTracking().Where(x=>x.Active).OrderBy(x=>x.Id).ToListAsync());
-app.MapPut("/api/admin/menu/{id:int}", async (int id, MenuInput input, RestaurantDb db) => { if (input.Usd < 0 || input.Toman < 0 || input.NameEn.Length is < 1 or > 120 || input.NameFa.Length is < 1 or > 120) return Results.BadRequest(); var m=await db.MenuItems.FindAsync(id);if(m is null)return Results.NotFound();m.NameEn=input.NameEn;m.NameFa=input.NameFa;m.Usd=input.Usd;m.Toman=input.Toman;m.Active=input.Active;await db.SaveChangesAsync();return Results.Ok(m); }).RequireAuthorization();
 app.MapPost("/api/assistant", async (ChatInput input, IHttpClientFactory factory, IConfiguration config, CancellationToken ct) => {
   if (string.IsNullOrWhiteSpace(input.Message) || input.Message.Length > 500 || input.Language is not ("en" or "fa")) return Results.BadRequest();
   var key=config["OPENAI_API_KEY"]; if(string.IsNullOrWhiteSpace(key))return Results.Json(new { error="AI service not configured" },statusCode:503);

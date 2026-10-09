@@ -20,3 +20,9 @@
 - Added bilingual USD/toman formatting for menu prices and English cart totals.
 - Centralized configurable demonstration pricing logic in `js/pricing.js`.
 - Clarified that conversion is illustrative, not real-time FX.
+
+## Stage 6
+- Same-origin ASP.NET Core static hosting and API-connected English/Persian reservations and assistant.
+- Read-only staff dashboard and staff sign-in.
+- Removed unprotected admin mutation endpoints pending CSRF protections.
+- Explicit demo/live distinction and setup instructions.

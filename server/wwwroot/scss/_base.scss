@@ -1,0 +1,9 @@
+
+$bg:#0b0b0d;$surface:#141417;$gold:#d6ad5b;$gold2:#f0cc7a;$cream:#f7f1e5;$muted:#aaa7a0;
+$max:1200px;
+@mixin container{width:min($max,calc(100% - 40px));margin-inline:auto}
+@mixin card{background:$surface;border:1px solid #29292e;border-radius:22px}
+@mixin button{min-height:46px;padding:0 22px;border-radius:12px;background:$gold;color:#15120b;font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sahel,Arial,sans-serif;background:$bg;color:$cream;line-height:1.8;direction:rtl}
+a{color:inherit;text-decoration:none}

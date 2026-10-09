@@ -1,0 +1,6 @@
+
+.container{@include base.container}
+.hero{min-height:calc(100vh - 114px)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:950px){.menu-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.menu-grid{grid-template-columns:1fr}}
