@@ -1,37 +1,61 @@
-# Ashkan Restaurant — Premium Bilingual Restaurant Website
+# Ashkan DineSphere — Bilingual Restaurant Operations Platform
 
-A multi-page restaurant experience built with **HTML, Sass/CSS and vanilla JavaScript**. The new English-first presentation has a dark culinary palette, responsive navigation, bilingual routes, a menu with filtering and a demo basket, a reservation request modal, and a local rule-based dining assistant.
+> A full-stack restaurant platform combining a premium HTML/Sass storefront with ASP.NET Core 8, SQL Server, role-based administration, order workflows, reservations and an optional AI concierge.
 
-## Start
+## Highlights
 
-Run `python -m http.server 8000` from the project root and open `http://localhost:8000`.
-
-## Pages
-
-- English (default): `/index.html`, `/menu.html`, `/about.html`, `/gallery.html`, `/services.html`, `/contact.html`, `/reservation.html`.
-- Persian (RTL): `/fa/index.html` and the matching seven pages. Use **FA / فارسی** or **EN** to switch languages.
+- **International-ready:** English-first (LTR, USD) and Persian (RTL, TOMAN), with independently configured menu prices rather than assumed exchange rates.
+- **Customer experience:** responsive food menu, reservation requests, cart and order submission through a server API.
+- **Operations:** authenticated administrator, menu management, reservation decisions, kitchen queue and currency-separated sales summary.
+- **AI concierge:** server-side OpenAI integration with optional configuration. No API secrets in client JavaScript.
+- **Engineering:** ASP.NET Core Minimal APIs, Entity Framework Core, SQL Server, Identity, input validation and rate limiting.
 
 ## Architecture
 
-- `scss/` contains the original Sass sources.
-- `css/main.css` contains the original compiled styling.
-- `css/premium.css` contains the new English-first premium theme (editable CSS).
-- `js/app.js` is the original Persian page interaction layer.
-- `js/premium.js` is the English interaction layer, including demo basket and a **rule-based** FAQ assistant.
-- `images/` contains the original project photography.
+`HTML + Sass + vanilla JavaScript → ASP.NET Core 8 API → EF Core → SQL Server`
 
-## Important demo limitations
+The public pages are served from `server/wwwroot`. The top-level site source is mirrored there. For production, use a build pipeline to avoid duplicating source assets.
 
-This is a **static frontend demo**. Reservation and contact forms do not transmit information or create real bookings. The basket is stored only in the browser, and there is no payment checkout. The assistant is a transparent local FAQ/rule-based chatbot, **not a connected AI model**. To add genuine AI, implement a server-side API with secure credentials, moderation, and data-handling controls. Never put API keys in client-side JavaScript.
+## Run locally
 
-Prices, addresses, opening hours, reviews, and contact details inherited from the original project are illustrative and require verification before production. Update sample metadata and replace `example.com` URLs before launch. Do not publish unverified testimonials or promotions.
+Requirements: .NET 8 SDK, SQL Server and `dotnet-ef` tool.
 
-## Next steps for production
+```powershell
+cd server
+$env:ConnectionStrings__Restaurant="Server=localhost;Database=AshkanRestaurant;Trusted_Connection=True;TrustServerCertificate=True"
+dotnet restore
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+$env:BOOTSTRAP_ADMIN_EMAIL="admin@example.com"
+$env:BOOTSTRAP_ADMIN_PASSWORD="REPLACE-WITH-A-STRONG-UNIQUE-PASSWORD"
+dotnet run
+```
 
-Connect reservations to a booking backend, add real inventory and checkout, verify restaurant information, create localized content from a single translation catalog, implement automated accessibility tests and integrate an authenticated AI service.
+**Important:** Only run `migrations add InitialCreate` on a new database without existing migrations. Existing installations must add an incremental migration. Remove bootstrap credentials after the initial account is provisioned. Use HTTPS.
 
-## Stage 2
-Every route loads `js/experience.js` and `css/experience.css` for accessible navigation and clear demo disclosure. The English reservation form validates local dates and basic phone format. These checks are client-side only; a real booking service must validate again on the server.
+Visit the HTTPS URL shown by `dotnet run`; staff dashboard: `/staff.html`. The public live menu requires menu items created through the admin API first. Without database content the live menu is empty. The AI concierge requires the `OPENAI_API_KEY` server environment variable. Payments are not implemented.
 
-## Stage 3 — localized menu prices
-English pages show sample USD prices; Persian pages show toman prices. Both use the same underlying sample toman amounts. `js/pricing.js` defines an **illustrative** rate of 100,000 toman per USD, **not a live exchange rate**. Set independently approved USD menu prices or integrate a trusted pricing backend before production. The English cart total uses USD; the Persian menu displays toman.
+## Security and production readiness
+
+This is a portfolio-stage implementation, **not production certified**. Complete a security audit, verify login and CSRF protections, add automated integration tests, deploy migrations, configure HTTPS and secret management, and verify legal/privacy requirements before accepting real customer information. Some legacy demo pages and localStorage workflows remain. Payment processing and inventory tracking are not implemented.
+
+## Recruiter notes
+
+The project demonstrates full-stack C# development, API design, relational data modeling, multilingual UX, currency-aware business logic and incremental modernization of a legacy static website. Particularly relevant to .NET Software Engineer / Full-Stack Developer roles in European markets.
+
+## Suggested repository
+
+`ashkan-dinesphere-restaurant-platform`
+
+**Description:** `Bilingual restaurant platform | ASP.NET Core 8, SQL Server, HTML/Sass, secure admin workflows, USD/Toman pricing, reservations, kitchen orders & AI concierge.`
+
+## License
+
+No license granted unless a LICENSE file is added.
+
+## Stage 10: Operations Analytics
+
+See [README_STAGE10.md](README_STAGE10.md) for the 30-day operations dashboard and completed-order revenue grouped by currency.
+
+## Stage 11
+See [README_STAGE11.md](README_STAGE11.md) for inventory management, migration, and limitations.
